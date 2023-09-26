@@ -1,4 +1,4 @@
-﻿using FilmAPI.Data.Entities;
+﻿using FilmAPI.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FilmAPI.Data
@@ -37,19 +37,7 @@ namespace FilmAPI.Data
                     PictureUrl = "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
                     TrailerUrl = "https://www.youtube.com/watch?v=V75dMMIW2B4&ab_channel=Movieclips",
                     FranchiseId = 1 
-                },
-                new Movie
-                {
-                    Id = 3,
-                    Title = "The Return of the King",
-                    Genre = "Epic fantasy",
-                    ReleaseYear = 2003,
-                    Director = "Peter Jackson",
-                    PictureUrl = "https://example.com/returnoftheking.jpg",
-                    TrailerUrl = "https://www.youtube.com/watch?v=V75dMMIW2B4&ab_channel=Movieclips",
-                    FranchiseId = 1
                 }
-
             );
             modelBuilder.Entity<Franchise>().HasData(
                 new Franchise
@@ -63,12 +51,6 @@ namespace FilmAPI.Data
                     Id = 2,
                     Name = "Star Wars",
                     Description = "The iconic space opera franchise created by George Lucas."
-                },
-                new Franchise
-                {
-                    Id = 3,
-                    Name = "The Hobbit",
-                    Description = "Another epic fantasy franchise by J.R.R. Tolkien."
                 }
              );
             modelBuilder.Entity<Character>().HasData(
@@ -87,14 +69,6 @@ namespace FilmAPI.Data
                     Alias = "Strider",
                     Gender = "Male",
                     PictureUrl = "https://example.com/aragorn.jpg"
-                },
-                new Character
-                {
-                    Id = 3,
-                    FullName = "Gandalf",
-                    Alias = "Mithrandir",
-                    Gender = "Male",
-                    PictureUrl = "https://example.com/gandalf.jpg"
                 }
             );
         }

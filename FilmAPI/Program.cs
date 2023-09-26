@@ -1,4 +1,4 @@
-using FilmAPI.Data.Entities;
+using FilmAPI.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System;
