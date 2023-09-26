@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EwkkRrtKgIP0xJ/6vP2k0KhunvD4WR4BO8en8RyKlmG4TDdxifbrCtjEK278zG277OiaRPqz9BIgQFO9RnpbKQ==",
+  "dgSpecHash": "57/MlVAUKaIHutGCXKajvSiZTcm4qzDamRVKBwz+HtkbPxgN49egj5qK7JP7zcXUdGxxxIlHn1AuBZpYEsQqRg==",
   "success": true,
   "projectFilePath": "C:\\Users\\JLange\\Documents\\GitHub\\FilmAPI\\FilmAPI\\FilmAPI.csproj",
   "expectedPackageFiles": [
@@ -81,10 +81,10 @@
     "C:\\Users\\JLange\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.11\\microsoft.entityframeworkcore.7.0.11.nupkg.sha512",
     "C:\\Users\\JLange\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.11\\microsoft.entityframeworkcore.abstractions.7.0.11.nupkg.sha512",
     "C:\\Users\\JLange\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.11\\microsoft.entityframeworkcore.analyzers.7.0.11.nupkg.sha512",
-    "C:\\Users\\JLange\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.10\\microsoft.entityframeworkcore.design.7.0.10.nupkg.sha512",
+    "C:\\Users\\JLange\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.11\\microsoft.entityframeworkcore.design.7.0.11.nupkg.sha512",
     "C:\\Users\\JLange\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.11\\microsoft.entityframeworkcore.relational.7.0.11.nupkg.sha512",
     "C:\\Users\\JLange\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.11\\microsoft.entityframeworkcore.sqlserver.7.0.11.nupkg.sha512",
-    "C:\\Users\\JLange\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.10\\microsoft.entityframeworkcore.tools.7.0.10.nupkg.sha512",
+    "C:\\Users\\JLange\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.11\\microsoft.entityframeworkcore.tools.7.0.11.nupkg.sha512",
     "C:\\Users\\JLange\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\JLange\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\JLange\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",

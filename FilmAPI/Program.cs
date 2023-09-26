@@ -1,12 +1,5 @@
-using FilmAPI.Data.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using FilmAPI.Data;
-
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
