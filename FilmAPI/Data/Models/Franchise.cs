@@ -10,6 +10,6 @@ namespace FilmAPI.Data.Entities
         public string Description { get; set; }
 
         // Navigation property
-        public ICollection<Movies> Movies { get; set; }
+        public ICollection<Movie> Movies { get; set; }
     }
 }

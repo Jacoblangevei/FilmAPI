@@ -2,7 +2,7 @@
 
 namespace FilmAPI.Data.Entities
 {
-    public class Movies
+    public class Movie
     { 
 
         [Key]
