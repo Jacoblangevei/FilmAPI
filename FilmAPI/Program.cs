@@ -1,9 +1,20 @@
+using FilmAPI.Data.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using FilmAPI.Data;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddDbContext<MovieDbContext>(options 
+    => options.UseSqlServer(builder.Configuration.GetConnectionString("Movie")));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

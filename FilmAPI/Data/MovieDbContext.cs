@@ -1,31 +1,20 @@
-﻿
-using FilmAPI.Data.Models;
+﻿using FilmAPI.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace FilmAPI.Data
-
 {
     public class MovieDbContext : DbContext
     {
-        public MovieDbContext(DbContextOptions<MovieDbContext> options) : base(options)
+        public MovieDbContext(DbContextOptions options) : base(options)
         {
         }
+
         public DbSet<Character> Characters { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Franchise> Franchises { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Data Source = N-NO-01-01-4697\\SQLEXPRESS; Initial Catalog = PostgradEF; Integrated Security = true; Trust Server Certificate = true;");
-            // https://learn.microsoft.com/en-us/ef/core/logging-events-diagnostics/simple-logging
-            optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
-        }
-
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             modelBuilder.Entity<Movie>().HasData(
                 new Movie
                 {
@@ -33,7 +22,7 @@ namespace FilmAPI.Data
                     Title = "Fellowship of the ring",
                     Genre = "Epic fantasy",
                     ReleaseYear = 2001,
-                    Director = "Petter Jackson",
+                    Director = "Peter Jackson",
                     PictureUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/The_Two_Towers_cover.gif/220px-The_Two_Towers_cover.gif",
                     TrailerUrl = "https://www.youtube.com/watch?v=V75dMMIW2B4&ab_channel=Movieclips",
                     FranchiseId = 1 
@@ -41,10 +30,10 @@ namespace FilmAPI.Data
                 new Movie
                 {
                     Id = 2,
-                    Title = "Two towers",
+                    Title = "The Two Towers",
                     Genre = "Epic fantasy",
                     ReleaseYear = 2003,
-                    Director = "Petter Jackson",
+                    Director = "Peter Jackson",
                     PictureUrl = "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
                     TrailerUrl = "https://www.youtube.com/watch?v=V75dMMIW2B4&ab_channel=Movieclips",
                     FranchiseId = 1 
@@ -82,11 +71,7 @@ namespace FilmAPI.Data
                     PictureUrl = "https://example.com/aragorn.jpg"
                 }
             );
-
-
-
         }
-
     }
 }
 
