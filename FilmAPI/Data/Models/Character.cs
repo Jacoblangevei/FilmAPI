@@ -12,6 +12,6 @@ namespace FilmAPI.Data.Models
         public string PictureUrl { get; set; }
 
         // Navigation property
-        public ICollection<MovieCharacter> MovieCharacters { get; set; }
+        public ICollection<Character> Characters { get; set; }
     }
 }
