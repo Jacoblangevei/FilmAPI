@@ -15,6 +15,14 @@ namespace FilmAPI.Data
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Franchise> Franchises { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Data Source = N-NO-01-01-4697\\SQLEXPRESS; Initial Catalog = PostgradEF; Integrated Security = true; Trust Server Certificate = true;");
+            // https://learn.microsoft.com/en-us/ef/core/logging-events-diagnostics/simple-logging
+            optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
+        }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
