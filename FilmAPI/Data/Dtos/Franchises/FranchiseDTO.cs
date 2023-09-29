@@ -1,7 +1,6 @@
 ﻿using FilmAPI.Data.Models;
 using System.ComponentModel.DataAnnotations;
-
-namespace FilmAPI.Data.Dtos.Franchises
+namespace FilmAPI.Data.DTOs.Franchises
 {
     public class FranchiseDTO
     {

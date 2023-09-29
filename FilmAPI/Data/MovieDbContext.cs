@@ -74,7 +74,3 @@ namespace FilmAPI.Data
         }
     }
 }
-
-
-
-

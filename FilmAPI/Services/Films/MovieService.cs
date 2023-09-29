@@ -1,6 +1,4 @@
-﻿
-
-using FilmAPI.Data;
+﻿using FilmAPI.Data;
 using FilmAPI.Data.Models;
 using FilmAPI.Controllers;
 using System.Data.Entity;

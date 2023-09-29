@@ -2,6 +2,35 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "[12.0.1]",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Azure.Core/1.25.0": {
         "type": "package",
         "dependencies": {
@@ -4098,6 +4127,35 @@
     }
   },
   "libraries": {
+    "AutoMapper/12.0.1": {
+      "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+      "type": "package",
+      "path": "automapper/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.12.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+      "sha512": "+g/K+Vpe3gGMKGzjslMOdqNlkikScDjWfVvmWTayrDHaG/n2pPmFBMa+jKX1r/h6BDGFdkyRjAuhFE3ykW+r1g==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
     "Azure.Core/1.25.0": {
       "sha512": "X8Dd4sAggS84KScWIjEbFAdt2U1KDolQopTPoHVubG2y3CM54f9l6asVrP5Uy384NWXjsspPYaJgz5xHc+KvTA==",
       "type": "package",
@@ -12139,6 +12197,8 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "AutoMapper >= 12.0.1",
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "EntityFramework >= 6.4.4",
       "Microsoft.AspNetCore.OpenApi >= 7.0.11",
       "Microsoft.EntityFrameworkCore >= 7.0.11",
@@ -12149,19 +12209,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KBruda\\.nuget\\packages\\": {}
+    "C:\\Users\\JLange\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KBruda\\source\\repos\\DungeonMaster\\FilmAPI\\FilmAPI\\FilmAPI.csproj",
+      "projectUniqueName": "C:\\Users\\JLange\\Documents\\GitHub\\FilmAPI\\FilmAPI\\FilmAPI.csproj",
       "projectName": "FilmAPI",
-      "projectPath": "C:\\Users\\KBruda\\source\\repos\\DungeonMaster\\FilmAPI\\FilmAPI\\FilmAPI.csproj",
-      "packagesPath": "C:\\Users\\KBruda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KBruda\\source\\repos\\DungeonMaster\\FilmAPI\\FilmAPI\\obj\\",
+      "projectPath": "C:\\Users\\JLange\\Documents\\GitHub\\FilmAPI\\FilmAPI\\FilmAPI.csproj",
+      "packagesPath": "C:\\Users\\JLange\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\JLange\\Documents\\GitHub\\FilmAPI\\FilmAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\KBruda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\JLange\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12187,6 +12247,14 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[12.0.1, )"
+          },
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[12.0.1, )"
+          },
           "EntityFramework": {
             "target": "Package",
             "version": "[6.4.4, )"
@@ -12237,7 +12305,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KBruda\\source\\repos\\DungeonMaster\\FilmAPI\\FilmAPI\\FilmAPI.csproj": {}
+    "C:\\Users\\JLange\\Documents\\GitHub\\FilmAPI\\FilmAPI\\FilmAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KBruda\\source\\repos\\DungeonMaster\\FilmAPI\\FilmAPI\\FilmAPI.csproj": {
+    "C:\\Users\\JLange\\Documents\\GitHub\\FilmAPI\\FilmAPI\\FilmAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KBruda\\source\\repos\\DungeonMaster\\FilmAPI\\FilmAPI\\FilmAPI.csproj",
+        "projectUniqueName": "C:\\Users\\JLange\\Documents\\GitHub\\FilmAPI\\FilmAPI\\FilmAPI.csproj",
         "projectName": "FilmAPI",
-        "projectPath": "C:\\Users\\KBruda\\source\\repos\\DungeonMaster\\FilmAPI\\FilmAPI\\FilmAPI.csproj",
-        "packagesPath": "C:\\Users\\KBruda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KBruda\\source\\repos\\DungeonMaster\\FilmAPI\\FilmAPI\\obj\\",
+        "projectPath": "C:\\Users\\JLange\\Documents\\GitHub\\FilmAPI\\FilmAPI\\FilmAPI.csproj",
+        "packagesPath": "C:\\Users\\JLange\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JLange\\Documents\\GitHub\\FilmAPI\\FilmAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\KBruda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JLange\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"
@@ -90,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

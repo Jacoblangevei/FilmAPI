@@ -1,4 +1,4 @@
-﻿namespace FilmAPI.Data.Dtos.Franchises
+﻿namespace FilmAPI.Data.DTOs.Franchises
 {
     public class FranchisePostDTO
     {

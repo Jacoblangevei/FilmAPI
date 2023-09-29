@@ -10,7 +10,5 @@
             Task UpdateAsync(TEntity entity);
             Task DeleteAsync(TKey id);
         }
-
     }
-
 }

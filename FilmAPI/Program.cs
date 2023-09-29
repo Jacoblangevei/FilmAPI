@@ -10,6 +10,7 @@ builder.Services.AddDbContext<MovieDbContext>(options
     => options.UseSqlServer(builder.Configuration.GetConnectionString("Movie")));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
@@ -22,7 +23,6 @@ if (app.Environment.IsDevelopment())
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "FilmAPI");
     });
-
 }
 
 app.UseHttpsRedirection();
