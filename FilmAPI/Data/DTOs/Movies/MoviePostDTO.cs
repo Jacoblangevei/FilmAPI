@@ -5,17 +5,17 @@ namespace FilmAPI.Data.DTOs.Movies
 {
     public class MoviePostDTO
     {
-        [Required]
+        //[Required]
         public string Title { get; set; }
 
-        [Required]
+        //[Required]
         public string Genre { get; set; }
 
-        [Required]
+        //[Required]
         [Range(1900, 2100)] // Just an example range for a valid movie release year
         public int ReleaseYear { get; set; }
 
-        [Required]
+        //[Required]
         public string Director { get; set; }
 
         public string PictureUrl { get; set; }

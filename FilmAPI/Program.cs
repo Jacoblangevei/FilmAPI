@@ -1,4 +1,5 @@
 using FilmAPI.Data;
+using FilmAPI.Services.Films;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,13 +12,13 @@ builder.Services.AddDbContext<MovieDbContext>(options
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<IMovieService, MovieService>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {

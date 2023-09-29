@@ -8,12 +8,12 @@ namespace FilmAPI.Data.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(150)]
+        //[Required]
+        //[StringLength(150)]
         public string Title { get; set; }
 
-        [Required]
-        [StringLength(200)]
+        //[Required]
+        //[StringLength(200)]
         public string Genre { get; set; }
         public int ReleaseYear { get; set; }
         public string Director { get; set; }

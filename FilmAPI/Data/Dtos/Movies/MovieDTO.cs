@@ -1,4 +1,5 @@
 ﻿using FilmAPI.Data.Models;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace FilmAPI.Data.DTOs.Movies
@@ -14,7 +15,8 @@ namespace FilmAPI.Data.DTOs.Movies
         public string TrailerUrl { get; set; }
 
         // Navigation property
-        public int? FranchiseId { get; set; }
+        [DefaultValue(1)]
+        public int FranchiseId { get; set; }
         public Franchise Franchise { get; set; }
     }
 }

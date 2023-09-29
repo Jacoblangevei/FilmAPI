@@ -46,7 +46,4 @@ namespace FilmAPI.Services.Films
             }
         }
     }
-
-    // Implement similar service classes for Franchise and Character services.
-
 }
