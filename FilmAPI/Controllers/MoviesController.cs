@@ -82,16 +82,21 @@ namespace FilmAPI.Controllers
 
         // POST: api/Movies
         [HttpPost]
-        public async Task<ActionResult<MovieDTO>> PostMovie(Movie movie)
+        public async Task<ActionResult<MovieDTO>> PostMovie(MoviePostDTO moviePostDTO)
         {
           if (_context.Movies == null)
           {
               return Problem("Entity set 'MovieDbContext.Movies'  is null.");
           }
+           
+            var movie = _mapper.Map<Movie>(moviePostDTO);
+
             _context.Movies.Add(movie);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMovie", new { id = movie.Id }, movie);
+            var movieDTO = _mapper.Map<MovieDTO>(movie);
+
+            return CreatedAtAction("GetMovie", new { id = movieDTO.Id }, movieDTO);
         }
 
         // DELETE: api/Movies/5
