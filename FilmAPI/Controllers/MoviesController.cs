@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using FilmAPI.Data;
 using FilmAPI.Data.Models;
+using AutoMapper;
+using FilmAPI.Data.DTOs.Movies;
 
 namespace FilmAPI.Controllers
 {
@@ -10,26 +12,29 @@ namespace FilmAPI.Controllers
     public class MoviesController : ControllerBase
     {
         private readonly MovieDbContext _context;
+        private readonly IMapper _mapper;
 
-        public MoviesController(MovieDbContext context)
+        public MoviesController(MovieDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Movies
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Movie>>> GetMovies()
+        public async Task<ActionResult<IEnumerable<MovieDTO>>> GetMovies()
         {
           if (_context.Movies == null)
           {
               return NotFound();
           }
-            return await _context.Movies.ToListAsync();
+            var movies = await _context.Movies.ToListAsync();
+            return _mapper.Map<List<MovieDTO>>(movies);
         }
 
         // GET: api/Movies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Movie>> GetMovie(int id)
+        public async Task<ActionResult<MovieDTO>> GetMovie(int id)
         {
           if (_context.Movies == null)
           {
@@ -42,11 +47,10 @@ namespace FilmAPI.Controllers
                 return NotFound();
             }
 
-            return movie;
+            return _mapper.Map<MovieDTO>(movie);
         }
 
         // PUT: api/Movies/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMovie(int id, Movie movie)
         {
@@ -77,9 +81,8 @@ namespace FilmAPI.Controllers
         }
 
         // POST: api/Movies
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Movie>> PostMovie(Movie movie)
+        public async Task<ActionResult<MovieDTO>> PostMovie(Movie movie)
         {
           if (_context.Movies == null)
           {

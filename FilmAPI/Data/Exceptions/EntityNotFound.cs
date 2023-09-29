@@ -2,7 +2,7 @@
 {
     public class EntityNotFound : Exception
     {
-        public EntityNotFoundException(string type, int id)
+        public EntityNotFound(string type, int id)
            : base($"{type} with Id: {id} could not be found.")
         {
         }
