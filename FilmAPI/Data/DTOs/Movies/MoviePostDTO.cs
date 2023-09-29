@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace FilmAPI.Data.DTOs.Movies
 {
@@ -22,7 +23,8 @@ namespace FilmAPI.Data.DTOs.Movies
         public string TrailerUrl { get; set; }
 
         // You probably only need the foreign key for posting and not the full navigation property
-        [Required]
+        //[Required]
+        [DefaultValue(1)]
         public int FranchiseId { get; set; }
     }
 }

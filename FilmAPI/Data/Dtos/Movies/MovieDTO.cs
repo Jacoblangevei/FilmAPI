@@ -14,7 +14,7 @@ namespace FilmAPI.Data.DTOs.Movies
         public string TrailerUrl { get; set; }
 
         // Navigation property
-        public int FranchiseId { get; set; }
+        public int? FranchiseId { get; set; }
         public Franchise Franchise { get; set; }
     }
 }
