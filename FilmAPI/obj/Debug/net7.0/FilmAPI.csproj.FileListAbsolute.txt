@@ -524,3 +524,5 @@ C:\Users\KBruda\source\repos\DungeonMaster\FilmAPI\FilmAPI\obj\Debug\net7.0\Film
 C:\Users\KBruda\source\repos\DungeonMaster\FilmAPI\FilmAPI\obj\Debug\net7.0\ref\FilmAPI.dll
 C:\Users\JLange\Documents\GitHub\FilmAPI\FilmAPI\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\JLange\Documents\GitHub\FilmAPI\FilmAPI\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\JLange\Documents\GitHub\FilmAPI\FilmAPI\bin\Debug\net7.0\FilmAPI.xml
+C:\Users\JLange\Documents\GitHub\FilmAPI\FilmAPI\obj\Debug\net7.0\FilmAPI.xml

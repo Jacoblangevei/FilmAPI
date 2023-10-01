@@ -14,6 +14,7 @@ namespace FilmAPI.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Seeds
             modelBuilder.Entity<Movie>().HasData(
                 new Movie
                 {
@@ -22,7 +23,7 @@ namespace FilmAPI.Data
                     Genre = "Epic fantasy",
                     ReleaseYear = 2001,
                     Director = "Peter Jackson",
-                    PictureUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/The_Two_Towers_cover.gif/220px-The_Two_Towers_cover.gif",
+                    PictureUrl = "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
                     TrailerUrl = "https://www.youtube.com/watch?v=V75dMMIW2B4&ab_channel=Movieclips",
                     FranchiseId = 1 
                 },
@@ -31,11 +32,22 @@ namespace FilmAPI.Data
                     Id = 2,
                     Title = "The Two Towers",
                     Genre = "Epic fantasy",
+                    ReleaseYear = 2002,
+                    Director = "Peter Jackson",
+                    PictureUrl = "https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg",
+                    TrailerUrl = "https://www.youtube.com/watch?v=hYcw5ksV8YQ",
+                    FranchiseId = 1 
+                },
+                new Movie
+                {
+                    Id = 3,
+                    Title = "The Return of the King",
+                    Genre = "Epic fantasy",
                     ReleaseYear = 2003,
                     Director = "Peter Jackson",
-                    PictureUrl = "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
-                    TrailerUrl = "https://www.youtube.com/watch?v=V75dMMIW2B4&ab_channel=Movieclips",
-                    FranchiseId = 1 
+                    PictureUrl = "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+                    TrailerUrl = "https://www.youtube.com/watch?v=r5X-hFf6Bwo",
+                    FranchiseId = 1
                 }
             );
             modelBuilder.Entity<Franchise>().HasData(

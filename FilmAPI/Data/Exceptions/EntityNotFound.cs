@@ -6,6 +6,5 @@
            : base($"{type} with Id: {id} could not be found.")
         {
         }
-
     }
 }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FilmAPI.Data;
 using FilmAPI.Data.Models;
+using AutoMapper;
+using FilmAPI.Data.DTOs.Franchises; // Import your Franchise DTOs
 
 namespace FilmAPI.Controllers
 {
@@ -15,31 +12,35 @@ namespace FilmAPI.Controllers
     public class FranchisesController : ControllerBase
     {
         private readonly MovieDbContext _context;
+        private readonly IMapper _mapper; // Inject IMapper
 
-        public FranchisesController(MovieDbContext context)
+        public FranchisesController(MovieDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper; // Initialize IMapper
         }
 
         // GET: api/Franchises
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Franchise>>> GetFranchises()
+        public async Task<ActionResult<IEnumerable<FranchiseDTO>>> GetFranchises()
         {
-          if (_context.Franchises == null)
-          {
-              return NotFound();
-          }
-            return await _context.Franchises.ToListAsync();
+            if (_context.Franchises == null)
+            {
+                return NotFound();
+            }
+            var franchises = await _context.Franchises.ToListAsync();
+            var franchiseDTOs = _mapper.Map<List<FranchiseDTO>>(franchises); // Map to DTOs
+            return franchiseDTOs;
         }
 
         // GET: api/Franchises/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Franchise>> GetFranchise(int id)
+        public async Task<ActionResult<FranchiseDTO>> GetFranchise(int id)
         {
-          if (_context.Franchises == null)
-          {
-              return NotFound();
-          }
+            if (_context.Franchises == null)
+            {
+                return NotFound();
+            }
             var franchise = await _context.Franchises.FindAsync(id);
 
             if (franchise == null)
@@ -47,17 +48,20 @@ namespace FilmAPI.Controllers
                 return NotFound();
             }
 
-            return franchise;
+            var franchiseDTO = _mapper.Map<FranchiseDTO>(franchise); // Map to DTO
+            return franchiseDTO;
         }
 
         // PUT: api/Franchises/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutFranchise(int id, Franchise franchise)
+        public async Task<IActionResult> PutFranchise(int id, FranchisePutDTO franchisePutDTO)
         {
-            if (id != franchise.Id)
+            if (id != franchisePutDTO.Id)
             {
                 return BadRequest();
             }
+
+            var franchise = _mapper.Map<Franchise>(franchisePutDTO); // Map from DTO to entity
 
             _context.Entry(franchise).State = EntityState.Modified;
 
@@ -82,16 +86,21 @@ namespace FilmAPI.Controllers
 
         // POST: api/Franchises
         [HttpPost]
-        public async Task<ActionResult<Franchise>> PostFranchise(Franchise franchise)
+        public async Task<ActionResult<FranchiseDTO>> PostFranchise(FranchisePostDTO franchisePostDTO)
         {
-          if (_context.Franchises == null)
-          {
-              return Problem("Entity set 'MovieDbContext.Franchises'  is null.");
-          }
+            if (_context.Franchises == null)
+            {
+                return Problem("Entity set 'MovieDbContext.Franchises'  is null.");
+            }
+
+            var franchise = _mapper.Map<Franchise>(franchisePostDTO); // Map from DTO to entity
+
             _context.Franchises.Add(franchise);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetFranchise", new { id = franchise.Id }, franchise);
+            var franchiseDTO = _mapper.Map<FranchiseDTO>(franchise); // Map to DTO
+
+            return CreatedAtAction("GetFranchise", new { id = franchiseDTO.Id }, franchiseDTO);
         }
 
         // DELETE: api/Franchises/5

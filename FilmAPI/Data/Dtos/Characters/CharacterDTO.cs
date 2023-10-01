@@ -1,7 +1,7 @@
 ﻿using FilmAPI.Data.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace FilmAPI.Data.Dtos.Characters
+namespace FilmAPI.Data.DTOs.Characters
 {
     public class CharacterDTO
     {

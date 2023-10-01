@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FilmAPI</name>
+    </assembly>
+    <members>
+        <member name="M:FilmAPI.Controllers.MoviesController.GetMovies">
+            <summary>
+            Retrieves all movies.
+            </summary>
+            <returns>A list of movies in the database.</returns>
+            <response code="200">Returns the list of movies.</response>
+            <response code="404">If no movies are found.</response>
+        </member>
+        <member name="T:FilmAPI.Migrations.initialDb">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmAPI.Migrations.initialDb.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmAPI.Migrations.initialDb.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmAPI.Migrations.initialDb.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
