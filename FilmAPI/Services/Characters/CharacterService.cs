@@ -2,6 +2,8 @@
 using FilmAPI.Data;
 using FilmAPI.Services.Characters;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 public class CharacterService : ICharacterService
 {
@@ -22,19 +24,19 @@ public class CharacterService : ICharacterService
         return await _context.Characters.FindAsync(id);
     }
 
-    public async Task CreateAsync(Character character)
+    public async Task AddCharacterAsync(Character character)
     {
         _context.Characters.Add(character);
         await _context.SaveChangesAsync();
     }
 
-    public async Task UpdateAsync(Character character)
+    public async Task UpdateCharacterAsync(Character character)
     {
         _context.Characters.Update(character);
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(int id)
+    public async Task DeleteCharacterAsync(int id)
     {
         var characterToDelete = await _context.Characters.FindAsync(id);
         if (characterToDelete != null)
@@ -43,20 +45,4 @@ public class CharacterService : ICharacterService
             await _context.SaveChangesAsync();
         }
     }
-
-    public Task AddCharacterAsync(Character character)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task UpdateCharacterAsync(Character character)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task DeleteCharacterAsync(int id)
-    {
-        throw new NotImplementedException();
-    }
 }
-
