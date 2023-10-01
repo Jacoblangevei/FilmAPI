@@ -4,6 +4,18 @@
         <name>FilmAPI</name>
     </assembly>
     <members>
+        <member name="T:FilmAPI.Controllers.MoviesController">
+            <summary>
+            Provides endpoints to manage movies.
+            </summary>
+        </member>
+        <member name="M:FilmAPI.Controllers.MoviesController.#ctor(FilmAPI.Services.Films.IMovieService,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FilmAPI.Controllers.MoviesController"/> class.
+            </summary>
+            <param name="movieService">The movie service.</param>
+            <param name="mapper">The mapper service.</param>
+        </member>
         <member name="M:FilmAPI.Controllers.MoviesController.GetMovies">
             <summary>
             Retrieves all movies.
@@ -11,6 +23,40 @@
             <returns>A list of movies in the database.</returns>
             <response code="200">Returns the list of movies.</response>
             <response code="404">If no movies are found.</response>
+        </member>
+        <member name="M:FilmAPI.Controllers.MoviesController.GetMovie(System.Int32)">
+            <summary>
+            Retrieves a specific movie by its unique identifier.
+            </summary>
+            <param name="id">The unique identifier of the movie.</param>
+            <returns>The movie with the specified identifier.</returns>
+        </member>
+        <member name="M:FilmAPI.Controllers.MoviesController.PutMovieDTO(System.Int32,FilmAPI.Data.DTOs.Movies.MoviePutDTO)">
+            <summary>
+            Updates a specific movie's details.
+            </summary>
+            <param name="id">The unique identifier of the movie.</param>
+            <param name="movieUpdateDTO">The updated details of the movie.</param>
+        </member>
+        <member name="M:FilmAPI.Controllers.MoviesController.PostMovie(FilmAPI.Data.DTOs.Movies.MoviePostDTO)">
+            <summary>
+            Creates a new movie.
+            </summary>
+            <param name="moviePostDTO">The details of the new movie.</param>
+            <returns>The created movie.</returns>
+        </member>
+        <member name="M:FilmAPI.Controllers.MoviesController.DeleteMovie(System.Int32)">
+            <summary>
+            Deletes a specific movie by its unique identifier.
+            </summary>
+            <param name="id">The unique identifier of the movie to delete.</param>
+        </member>
+        <member name="M:FilmAPI.Controllers.MoviesController.MovieExistsAsync(System.Int32)">
+            <summary>
+            Checks if a movie with the specified identifier exists.
+            </summary>
+            <param name="id">The unique identifier of the movie.</param>
+            <returns>True if the movie exists, otherwise false.</returns>
         </member>
         <member name="T:FilmAPI.Migrations.initialDb">
             <inheritdoc />

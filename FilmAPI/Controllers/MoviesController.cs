@@ -109,6 +109,9 @@ using FilmAPI.Services.Films;
 
 namespace FilmAPI.Controllers
 {
+    /// <summary>
+    /// Provides endpoints to manage movies.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class MoviesController : ControllerBase
@@ -116,6 +119,11 @@ namespace FilmAPI.Controllers
         private readonly IMovieService _movieService;
         private readonly IMapper _mapper;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MoviesController"/> class.
+        /// </summary>
+        /// <param name="movieService">The movie service.</param>
+        /// <param name="mapper">The mapper service.</param>
         public MoviesController(IMovieService movieService, IMapper mapper)
         {
             _movieService = movieService;
@@ -143,6 +151,11 @@ namespace FilmAPI.Controllers
             return _mapper.Map<List<MovieDTO>>(movies);
         }
 
+        /// <summary>
+        /// Retrieves a specific movie by its unique identifier.
+        /// </summary>
+        /// <param name="id">The unique identifier of the movie.</param>
+        /// <returns>The movie with the specified identifier.</returns>
         // GET: api/Movies/5
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
@@ -159,6 +172,11 @@ namespace FilmAPI.Controllers
             return _mapper.Map<MovieDTO>(movie);
         }
 
+        /// <summary>
+        /// Updates a specific movie's details.
+        /// </summary>
+        /// <param name="id">The unique identifier of the movie.</param>
+        /// <param name="movieUpdateDTO">The updated details of the movie.</param>
         // PUT: api/Movies/5
         [HttpPut("{id}")]
         [ProducesResponseType(204)]
@@ -174,6 +192,11 @@ namespace FilmAPI.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Creates a new movie.
+        /// </summary>
+        /// <param name="moviePostDTO">The details of the new movie.</param>
+        /// <returns>The created movie.</returns>
         // POST: api/Movies
         [HttpPost]
         [ProducesResponseType(201)]
@@ -189,6 +212,10 @@ namespace FilmAPI.Controllers
             return CreatedAtAction("GetMovie", new { id = movieDTO.Id }, movieDTO);
         }
 
+        /// <summary>
+        /// Deletes a specific movie by its unique identifier.
+        /// </summary>
+        /// <param name="id">The unique identifier of the movie to delete.</param>
         // DELETE: api/Movies/5
         [HttpDelete("{id}")]
         [ProducesResponseType(204)]
@@ -206,6 +233,11 @@ namespace FilmAPI.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Checks if a movie with the specified identifier exists.
+        /// </summary>
+        /// <param name="id">The unique identifier of the movie.</param>
+        /// <returns>True if the movie exists, otherwise false.</returns>
         private async Task<bool> MovieExistsAsync(int id)
         {
             var movie = await _movieService.GetMovieByIdAsync(id);
