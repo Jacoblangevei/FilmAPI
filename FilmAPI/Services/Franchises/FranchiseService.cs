@@ -17,28 +17,33 @@ namespace FilmAPI.Services.Franchises
             _context = context;
         }
 
+        // Get all Franchises
         public async Task<IEnumerable<Franchise>> GetFranchisesAsync()
         {
             return await _context.Franchises.ToListAsync();
         }
 
+        // Get Franchise by Id
         public async Task<Franchise> GetFranchiseByIdAsync(int id)
         {
             return await _context.Franchises.FindAsync(id);
         }
 
+        // Add Franchise
         public async Task AddFranchiseAsync(Franchise franchise)
         {
             _context.Franchises.Add(franchise);
             await _context.SaveChangesAsync();
         }
 
+        // Update Franchise
         public async Task UpdateFranchiseAsync(Franchise franchise)
         {
             _context.Franchises.Update(franchise);
             await _context.SaveChangesAsync();
         }
 
+        // Delete Franchise
         public async Task DeleteFranchiseAsync(int id)
         {
             var franchiseToDelete = await _context.Franchises.FindAsync(id);

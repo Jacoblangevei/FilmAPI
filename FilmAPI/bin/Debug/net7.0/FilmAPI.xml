@@ -163,6 +163,30 @@
         <member name="M:FilmAPI.Migrations.newMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:FilmAPI.Migrations.finalmigration">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmAPI.Migrations.finalmigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmAPI.Migrations.finalmigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmAPI.Migrations.finalmigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:FilmAPI.Migrations.newDb">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmAPI.Migrations.newDb.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmAPI.Migrations.newDb.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmAPI.Migrations.newDb.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="M:FilmAPI.Services.Franchises.IFranchiseService.GetFranchisesAsync">
             <summary>
             Retrieves all franchises from the database.

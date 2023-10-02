@@ -1,8 +1,8 @@
-﻿namespace FilmAPI.Data.DTOs.Movies
+﻿/*namespace FilmAPI.Data.DTOs.Movies
 {
     public class MovieDeleteDTO
     {
         public int Id { get; set; }
     }
-}
+}*/
 

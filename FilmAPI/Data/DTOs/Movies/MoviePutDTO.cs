@@ -23,7 +23,7 @@ namespace FilmAPI.Data.DTOs.Movies
 
         public string TrailerUrl { get; set; }
 
-        //[DefaultValue(1)]
+        [DefaultValue(1)]
         public int FranchiseId { get; set; }
     }
 }

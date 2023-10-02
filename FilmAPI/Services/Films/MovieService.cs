@@ -66,28 +66,33 @@ namespace FilmAPI.Services.Films
             _context = context;
         }
 
+        // Get all Movies
         public async Task<IEnumerable<Movie>> GetMoviesAsync()
         {
             return await _context.Movies.ToListAsync();
         }
 
+        // Get Movie by Id
         public async Task<Movie> GetMovieByIdAsync(int id)
         {
             return await _context.Movies.FindAsync(id);
         }
 
+        // Add Movie
         public async Task AddMovieAsync(Movie movie)
         {
             _context.Movies.Add(movie);
             await _context.SaveChangesAsync();
         }
 
+        // Update Movie
         public async Task UpdateMovieAsync(Movie movie)
         {
             _context.Movies.Update(movie);
             await _context.SaveChangesAsync();
         }
 
+        // Delete Movie
         public async Task DeleteMovieAsync(int id)
         {
             var movieToDelete = await _context.Movies.FindAsync(id);
