@@ -69,9 +69,66 @@ namespace FilmAPI.Controllers
             return _mapper.Map<FranchiseDTO>(franchise);
         }
 
-        // Other methods for PUT, POST, DELETE, etc., can be added similar to the MoviesController. 
+        /// <summary>
+        /// Adds a new franchise to the database.
+        /// </summary>
+        /// <param name="franchiseDTO">The franchise data transfer object.</param>
+        /// <returns>The created franchise with its new unique identifier.</returns>
+        /// <response code="201">Returns the newly created franchise.</response>
+        /// <response code="400">If the franchise is null or invalid.</response>
+        [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        public async Task<ActionResult<FranchiseDTO>> PostFranchise(FranchiseDTO franchiseDTO)
+        {
+            if (franchiseDTO == null)
+            {
+                return BadRequest("Franchise data is required.");
+            }
 
-        // ... Add PUT, POST, DELETE methods here ...
+            var franchise = _mapper.Map<Franchise>(franchiseDTO);
+
+            await _franchiseService.AddFranchiseAsync(franchise);
+
+            var resultDTO = _mapper.Map<FranchiseDTO>(franchise);
+
+            return CreatedAtAction(nameof(GetFranchise), new { id = resultDTO.Id }, resultDTO);
+        }
+
+        /// <summary>
+        /// Updates a specific franchise in the database.
+        /// </summary>
+        /// <param name="id">The unique identifier of the franchise.</param>
+        /// <param name="franchiseDTO">The updated franchise data transfer object.</param>
+        /// <returns>No content if the update was successful.</returns>
+        /// <response code="204">Returns no content if the update was successful.</response>
+        /// <response code="400">If the id doesn't match with the franchiseDTO's Id.</response>
+        /// <response code="404">If the franchise with the specified id was not found.</response>
+        [HttpPut("{id}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> PutFranchise(int id, FranchiseDTO franchiseDTO)
+        {
+            if (id != franchiseDTO.Id)
+            {
+                return BadRequest("Id mismatch.");
+            }
+
+            if (!await FranchiseExistsAsync(id))
+            {
+                return NotFound();
+            }
+
+            var franchiseToUpdate = _mapper.Map<Franchise>(franchiseDTO);
+
+            await _franchiseService.UpdateFranchiseAsync(franchiseToUpdate);
+
+            return NoContent();
+        }
+
+        // ...
+
 
         /// <summary>
         /// Checks if a franchise with the specified identifier exists.

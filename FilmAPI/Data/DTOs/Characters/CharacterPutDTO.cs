@@ -1,4 +1,6 @@
-﻿namespace FilmAPI.Data.DTOs.Characters
+﻿using System.ComponentModel;
+
+namespace FilmAPI.Data.DTOs.Characters
 {
     public class CharacterPutDTO
     {

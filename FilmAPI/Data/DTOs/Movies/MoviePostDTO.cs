@@ -25,6 +25,8 @@ namespace FilmAPI.Data.DTOs.Movies
         //[Required]
         [DefaultValue(1)]
         public int FranchiseId { get; set; }
+
+        public string franchise { get; set; }
     }
 }
 

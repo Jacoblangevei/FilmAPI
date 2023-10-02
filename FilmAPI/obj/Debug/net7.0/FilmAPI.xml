@@ -78,6 +78,26 @@
             <param name="id">The unique identifier of the franchise.</param>
             <returns>The franchise with the specified identifier.</returns>
         </member>
+        <member name="M:FilmAPI.Controllers.FranchisesController.PostFranchise(FilmAPI.Data.DTOs.Franchises.FranchiseDTO)">
+            <summary>
+            Adds a new franchise to the database.
+            </summary>
+            <param name="franchiseDTO">The franchise data transfer object.</param>
+            <returns>The created franchise with its new unique identifier.</returns>
+            <response code="201">Returns the newly created franchise.</response>
+            <response code="400">If the franchise is null or invalid.</response>
+        </member>
+        <member name="M:FilmAPI.Controllers.FranchisesController.PutFranchise(System.Int32,FilmAPI.Data.DTOs.Franchises.FranchiseDTO)">
+            <summary>
+            Updates a specific franchise in the database.
+            </summary>
+            <param name="id">The unique identifier of the franchise.</param>
+            <param name="franchiseDTO">The updated franchise data transfer object.</param>
+            <returns>No content if the update was successful.</returns>
+            <response code="204">Returns no content if the update was successful.</response>
+            <response code="400">If the id doesn't match with the franchiseDTO's Id.</response>
+            <response code="404">If the franchise with the specified id was not found.</response>
+        </member>
         <member name="M:FilmAPI.Controllers.FranchisesController.FranchiseExistsAsync(System.Int32)">
             <summary>
             Checks if a franchise with the specified identifier exists.
