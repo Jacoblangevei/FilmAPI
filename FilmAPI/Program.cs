@@ -8,6 +8,7 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Services
 builder.Services.AddControllers();
 builder.Services.AddDbContext<MovieDbContext>(options 
     => options.UseSqlServer(builder.Configuration.GetConnectionString("Movie")));
@@ -17,7 +18,6 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "FilmAPI", Version = "v1" });
     // Include XML Comments
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFile));
 });
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

@@ -127,9 +127,6 @@ namespace FilmAPI.Controllers
             return NoContent();
         }
 
-        // ...
-
-
         /// <summary>
         /// Checks if a franchise with the specified identifier exists.
         /// </summary>
