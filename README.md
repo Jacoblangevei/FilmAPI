@@ -14,13 +14,17 @@ Utilizes Entity Framework Core for efficient database operations.
 - Restore packages (dotnet restore)
 - Ensure that the connection string in appsettings.json is correct. Then run:
   dotnet ef database update (EntityFrameworkCore\update-database in package manager console).
+  If update-database does not work, try this:
+  1. EntityFrameworkCore\enable-migrations
+  2. EntityFrameWorkCore\add-migration migrationName
+  3. EntityFrameworkCore\update-database
 - Run application
 
 ## Tools used
 - ASP.NET Core: For creating the Web API.
 - Entity Framework Core: For handling database operations.
 - Automapper: For mapping entity objects to DTOs.
-- Swagger
+- Swagger for database interaction
 - Git: For version control.
 
 ## Usage
